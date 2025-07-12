@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swap Request Inbox | SkillSwap Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Swap Request Inbox</h1>
+        </header>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Incoming Requests</h2>
+                <span class="badge" id="incoming-count">0 new</span>
+            </div>
+            
+            <ul class="request-list" id="incoming-requests">
+                <!-- Requests will be populated by JavaScript -->
+            </ul>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Outgoing Requests</h2>
+            </div>
+            
+            <ul class="request-list" id="outgoing-requests">
+                <!-- Requests will be populated by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
