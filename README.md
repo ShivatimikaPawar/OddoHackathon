@@ -32,4 +32,7 @@ Design Highlights
 video link:
 https://drive.google.com/drive/folders/1d6xg1FbwWCMb3J36pWyvqcEF-16q5kIE?usp=sharing
 
+Document:
+https://drive.google.com/drive/folders/19rspvApoGyBZ6xIYy9CO186TBqIT3qPz?usp=sharing
+
 
