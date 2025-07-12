@@ -29,6 +29,7 @@ Design Highlights
 - Role-Based Access Control for user/admin separation
 - Scalable Structure with packages for model, dao, controller, and jsp
 
-
+video link:
+https://drive.google.com/drive/folders/1d6xg1FbwWCMb3J36pWyvqcEF-16q5kIE?usp=sharing
 
 
