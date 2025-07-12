@@ -1,0 +1,236 @@
+/* Sky Blue Theme */
+:root {
+    --primary-color: #4fc3f7;
+    --primary-dark: #039be5;
+    --primary-light: #b3e5fc;
+    --accent-color: #ff9800;
+    --background: #e1f5fe;
+    --card-bg: #ffffff;
+    --text-dark: #01579b;
+    --text-light: #5d99c6;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --error: #f44336;
+    --gray: #b0bec5;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    border-radius: 5px 5px 0 0;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin: 0;
+    font-weight: 600;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    color: var(--text-dark);
+    font-size: 20px;
+}
+
+.section {
+    background-color: var(--card-bg);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    border: 1px solid var(--primary-light);
+}
+
+.section-header {
+    background: linear-gradient(to right, var(--primary-light), white);
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--primary-light);
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    background-color: var(--accent-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.request-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.request-item {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--primary-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.2s;
+}
+
+.request-item:hover {
+    background-color: rgba(79, 195, 247, 0.05);
+}
+
+.request-item:last-child {
+    border-bottom: none;
+}
+
+.request-info {
+    flex: 1;
+}
+
+.user-name {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--text-dark);
+}
+
+.skill-pair {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px 0;
+    font-size: 14px;
+    gap: 8px;
+}
+
+.skill-offered, .skill-wanted {
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-right: 10px;
+}
+
+.skill-offered {
+    background-color: rgba(79, 195, 247, 0.2);
+    color: var(--text-dark);
+    border: 1px solid var(--primary-color);
+}
+
+.skill-wanted {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+}
+
+.request-status {
+    font-size: 14px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-weight: 500;
+}
+
+.status-pending {
+    background-color: rgba(255, 152, 0, 0.1);
+    color: var(--warning);
+    border: 1px solid var(--warning);
+}
+
+.status-accepted {
+    background-color: rgba(76, 175, 80, 0.1);
+    color: var(--success);
+    border: 1px solid var(--success);
+}
+
+.status-rejected {
+    background-color: rgba(244, 67, 54, 0.1);
+    color: var(--error);
+    border: 1px solid var(--error);
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.btn-accept {
+    background-color: var(--success);
+    color: white;
+}
+
+.btn-accept:hover {
+    background-color: #3e8e41;
+    transform: translateY(-1px);
+}
+
+.btn-reject {
+    background-color: var(--error);
+    color: white;
+}
+
+.btn-reject:hover {
+    background-color: #d32f2f;
+    transform: translateY(-1px);
+}
+
+.btn-delete {
+    background-color: var(--gray);
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #757575;
+    transform: translateY(-1px);
+}
+
+.empty-message {
+    padding: 20px;
+    text-align: center;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .request-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .action-buttons {
+        width: 100%;
+        justify-content: flex-end;
+    }
+    
+    .skill-pair {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

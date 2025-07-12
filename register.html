@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Login | Skill Swap Platform</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/css/login.css" />
+  <!--Used for Subheading Paragraph(Inder)-->
+  <link href="https://fonts.googleapis.com/css2?family=Inder&display=swap" rel="stylesheet">
+
+  <!--Used in Heading (Galindo)-->
+  <link href="https://fonts.googleapis.com/css2?family=Galindo&display=swap" rel="stylesheet">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js"></script>
+  <script src="/js/firebase.js"></script>
+
+</head>
+
+<body class="simple-login-body">
+
+  <!---------------------------------------------------------Header-------------------------------------------------------------->
+
+  <header class="navigation">
+    <div class="navigation-container">
+      <!--Logo-->
+      <img src="image/logo.png" alt="Skill Swap Platform" class="logo" />
+
+      <!------------------------------Navigation ---------------------------------->
+      <nav class="Items">
+        <a href="home.html" class="home">Home</a>
+        <a href="user.html" class="user">User</a>
+        <a href="login.html" class="login">Login</a>
+        <a href="register.html" class="login">Register</a>
+        
+        <a href="modal.html" class="login">modal</a>
+        <a href="inbox.html" class="login">inbox</a>
+        <div class="profile-dropdown">
+          <div class="profile-icon-container">
+            <!-- Default profile icon (shown when no image is uploaded) -->
+            <div class="default-profile-icon" id="default-icon">
+              <i class="fas fa-user"></i>
+            </div>
+
+            <!-- User-uploaded profile image (hidden by default) -->
+            <img id="profile-image" src="/image/DEFAULT.jpeg" alt="Profile" class="profile-icon">
+
+            <!-- Camera icon overlay -->
+            <i class="fas fa-camera upload-icon"></i>
+
+            <!-- Hidden file input -->
+            <input type="file" id="profile-upload" accept="image/*" style="display: none;">
+          </div>
+
+      </nav>
+    </div>
+  </header>
+
+  <main class="register-container">
+    <h2>Create Account</h2>
+    <form id="registerForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Register</button>
+    </form>
+  </main>
+
+  <script>
+    // 🔌 Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.firestore();
+
+    // 🧠 Register User
+    document.getElementById("registerForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      try {
+        const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+        const user = userCredential.user;
+
+        // Save user to Firestore
+        await db.collection("users").doc(user.uid).set({
+          name: name,
+          email: email,
+          createdAt: new Date()
+        });
+
+        alert("✅ Registration successful!");
+        window.location.href = "profile.html"; // Redirect after registration
+      } catch (error) {
+        alert("❌ Error: " + error.message);
+      }
+    });
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inder', sans-serif;
+      background: #f9f9f9;
+    }
+
+    .register-container {
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 25px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      background: #fff;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    h2 {
+      text-align: center;
+      font-family: 'Galindo', cursive;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      box-sizing: border-box;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #2d9cdb;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #238acb;
+    }
+
+    .navigation-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 30px;
+      background-color: #2d9cdb;
+      align-items: center;
+    }
+
+    .logo {
+      height: 40px;
+    }
+
+    .Items a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .Items a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</body>
+</html>

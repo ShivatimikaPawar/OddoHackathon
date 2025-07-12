@@ -1,0 +1,271 @@
+/* ☑️ --------------------------------------- Full Body --------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+}
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+/* ☑️ ------------------------------------------ body ----------------------------------------- */
+body, html {
+    background: linear-gradient(to right, #e0f7fa, #f1f8ff);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'inder', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    overflow-x: hidden;
+    
+}
+
+/* ☑️ --------------------------------------- Navigation --------------------------------------- */
+.navigation {
+    position: sticky;
+    padding: 0 ;
+    margin-bottom: 0px ;
+    background:rgba(255, 255, 255, 0.93) ;
+    box-shadow:0px 4px 8px rgba(124, 132, 137, 0.808);
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.navigation-container {
+    position: sticky;
+    width: 100%;
+    max-width: 100vw;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*Logo*/
+.logo {
+    width: 71px;
+    height: 48px;
+    padding-left: 32px;
+    opacity: 100%;
+    border-radius: 2px;
+}
+
+/*Items*/
+.Items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding-right: 70px;
+    gap: 20px;
+    width: 700px;
+    height: 40px;
+    text-decoration: none;
+}
+
+.Items a {
+    color: rgba(0, 0, 0, 1);
+    text-decoration: none;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.home {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color:rgba(0, 0, 0, 1);
+    align-items: center;
+    display: flex;
+    order: 0;
+    flex-grow: 0;
+    z-index: 5;
+}
+
+.user {
+    padding: 10px;
+    opacity: 100%;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color:rgba(0, 0, 0, 1);
+    align-items: center;
+    display: flex;
+    order: 1;
+    flex-grow: 0;
+    z-index: 5;
+}
+
+.login {
+    padding: 10px;
+    opacity: 100%;
+    font-size: 20px;
+    line-height: 150%;
+    letter-spacing: 0%;
+    color:rgba(0, 0, 0, 1);
+    align-items: center;
+    display: flex;
+    order: 2;
+    flex-grow: 0;
+    z-index: 5;
+}
+
+/* Profile Image Styles */
+.profile-dropdown {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto;
+    order:3
+}
+
+.profile-icon-container {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0e0e0; /* Light gray background */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.default-profile-icon {
+  font-size: 20px;
+}
+
+.profile-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  background: #eee;
+}
+
+.upload-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: white;
+  padding: 3px;
+  border-radius: 50%;
+  font-size: 12px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*Form*/
+
+.login-box {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  margin-top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 60px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  gap: 30px;
+}
+
+.logintitle{
+  position: absolute;
+  top: 20px;
+}
+
+.login-left {
+  flex: 1;
+}
+
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-right img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.2s ease;
+}
+
+.login-box input:focus {
+  border-color: #2d9cdb;
+  outline: none;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2d9cdb;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-box button:hover {
+  background-color: #1b7fbf;
+}
+
+.forgot {
+  text-align: center;
+  margin-top: 12px;
+}
+
+.forgot a {
+  text-decoration: none;
+  color: #2d9cdb;
+  font-size: 14px;
+}
+
+.forgot a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .login-box {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .login-right {
+    margin-top: 20px;
+  }
+}
+

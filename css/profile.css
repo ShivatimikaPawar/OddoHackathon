@@ -1,0 +1,125 @@
+.profile-pic-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 30px;
+}
+
+.profile-pic-wrapper {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.profile-pic-wrapper img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #2d9cdb;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.edit-label {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2d9cdb;
+  background-color: #e6f2f8;
+  padding: 6px 10px;
+  border-radius: 20px;
+  transition: background 0.3s;
+}
+
+.edit-label:hover {
+  background-color: #d1ecf7;
+}
+
+#photoUpload {
+  display: none;
+}
+
+
+
+
+/* Container styling */
+.profile-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+}
+
+.profile-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: #2d3748;
+  font-size: 26px;
+}
+
+/* Form styling */
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.profile-form label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="file"],
+.profile-form input[type="email"],
+.profile-form input[type="password"],
+.profile-form select {
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  transition: 0.2s border ease;
+}
+
+.profile-form input:focus,
+.profile-form select:focus {
+  border-color: #2d9cdb;
+  outline: none;
+}
+
+/* Checkbox */
+.profile-form input[type="checkbox"] {
+  margin-right: 8px;
+}
+
+/* Button */
+.profile-form button {
+  padding: 12px;
+  background-color: #2d9cdb;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.profile-form button:hover {
+  background-color: #1b7fbf;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .profile-form button {
+    font-size: 15px;
+  }
+}
